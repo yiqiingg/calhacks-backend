@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import {useQuery, useConvex } from "convex/react"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { api } from "../convex/_generated/api"
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const convex = useConvex();
 
   return (
     <>
@@ -18,7 +21,10 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={async () => {
+              console.log('h')
+              console.log(await convex.query(api.myFn.get_attractions,{ city: "New York", price_high: 4, price_low: 2 }))
+            }}>
           count is {count}
         </button>
         <p>

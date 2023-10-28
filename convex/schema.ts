@@ -5,15 +5,16 @@ export default defineSchema({
   // Other tables here...
 
 
-  places: defineTable({
-    name: v.string(),
-    latitude: v.float64(),
-    longitude: v.float64(),
-    price_point: v.float64(),
-    rating: v.number(),
+  attractions: defineTable({
+    category: v.string(),
     city: v.string(),
     description: v.string(),
-    category: v.string()
+    latitude: v.float64(),
+    longitude: v.float64(),
+    name: v.string(),
+    price_point: v.float64(),
+    photo_url:v.string(),
+    rating: v.float64(),
   })
 
 });

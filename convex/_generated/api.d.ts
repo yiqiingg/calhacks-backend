@@ -14,10 +14,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as api_ from "../api";
-import type * as data from "../data";
-import type * as data_scrapper from "../data_scrapper";
-import type * as seed_data from "../seed_data";
+import type * as myFn from "../myFn";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -28,10 +25,7 @@ import type * as seed_data from "../seed_data";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  api: typeof api_;
-  data: typeof data;
-  data_scrapper: typeof data_scrapper;
-  seed_data: typeof seed_data;
+  myFn: typeof myFn;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

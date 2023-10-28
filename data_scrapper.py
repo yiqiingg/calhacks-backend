@@ -62,6 +62,8 @@ def extract_details(place, city, cat):
     price_point = place.get("price_level", -1)
     # Google Places API does not provide a direct "description", but user rating is available
     rating = place.get("rating", "N/A")
+    photo_ref = place.get("photos",['1'])[0]['photo_reference']
+
 
     return {
         "name": name,
@@ -71,6 +73,7 @@ def extract_details(place, city, cat):
         "rating": rating,
         "city": city,
         "description":get_place_details(API_KEY,place.get('place_id')),
+        "photo_url":f"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference={photo_ref}&key=AIzaSyBG8-ZzBHlTA6e7WfcvUm1OZxXCNk7ErMU",
         "category": cat
     }
 
