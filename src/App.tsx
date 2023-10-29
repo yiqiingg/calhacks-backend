@@ -22,7 +22,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={async () => {
-              console.log('h')
+              console.log(convex)
               console.log(await convex.query(api.myFn.get_attractions,{ city: "New York", price_high: 4, price_low: 2 }))
             }}>
           count is {count}
